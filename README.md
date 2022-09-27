@@ -1,3 +1,6 @@
+# Links
+- CloudFormation page - https://dthr2j7nmxpn2.cloudfront.net
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:

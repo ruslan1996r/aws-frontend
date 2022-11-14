@@ -25,10 +25,21 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
 
   const uploadFile = async () => {
     if (!file) {
-      return console.error("Something went wrong. File not found")
+      return console.error("Something went wrong. File not found");
     }
+
+    // Basic cnVzbGFuMTk5NnI6VEVTVF9QQVNTV09SRA==
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      return alert("No token!");
+    }
+
     // Get the presigned URL
     const response = await axios({
+      headers: {
+        Authorization: `Basic ${token}`,
+      },
       method: "GET",
       url: `${url}/${encodeURIComponent(file.name)}`,
     });
